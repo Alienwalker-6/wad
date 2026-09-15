@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    color: #111;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 35px;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    text-align: center;
+}
+
+h1 {
+    margin: 0 0 10px;
+    font-size: 38px;
+}
+
+.instruction {
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+
+#typingArea {
+    width: 100%;
+    min-height: 190px;
+    padding: 24px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background: #fafafa;
+    text-align: left;
+    cursor: text;
+    outline: none;
+    overflow: hidden;
+}
+
+#typingArea:focus {
+    border-color: #333;
+}
+
+#textDisplay {
+    font-size: 25px;
+    line-height: 1.8;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+}
+
+/* Every target character */
+.char {
+    position: relative;
+}
+
+/* Character already typed correctly */
+.correct {
+    color: #111;
+}
+
+/* Character currently being typed */
+.current {
+    border-left: 2px solid #111;
+    animation: blink 0.8s infinite;
+}
+
+/* Wrong character */
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.buttons {
+    margin-top: 22px;
+}
+
+button {
+    padding: 12px 25px;
+    margin: 5px;
+    border: none;
+    border-radius: 6px;
+    background: #333;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #555;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    margin-top: 22px;
+    font-size: 20px;
+}
+
+#message {
+    min-height: 24px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+        margin: 25px auto;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    #textDisplay {
+        font-size: 21px;
+    }
+
+    .stats {
+        gap: 20px;
+    }
+}
